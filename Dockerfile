@@ -1,4 +1,4 @@
-FROM ros:noetic
+FROM --platform=linux/arm64 arm64v8/ros:noetic
 
 ARG user_id=1000
 ENV USERNAME=gt
@@ -77,7 +77,8 @@ RUN pip install --no-cache-dir \
     boto3 \
     objgraph \
     cos-python-sdk-v5==1.9.31 \
-    setuptools==75.3.2 \
+    setuptools==74.1.3 \
+    importlib-metadata==6.11.0 \
     prometheus_client==0.21.1 \
     catkin_pkg==1.0.0 
     
