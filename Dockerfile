@@ -86,7 +86,7 @@ RUN python3 -m pip install --no-cache-dir \
     prometheus_client==0.21.1 \
     catkin_pkg==1.0.0 
     
-RUN python3 -m pip install --no-cache-dir \
+RUN python3 -m pip install --no-cache-dir  --ignore-installed \
     ipdb==0.13.13 \
     matplotlib==3.7.2 \
     motmetrics==1.4.0 \
