@@ -166,10 +166,10 @@ echo "========== Install acados_template =========="
 cd ${ACADOS_DIR}/interfaces/acados_template
 
 
-python3 -m pip install --upgrade pip wheel
+python3 -m pip install --upgrade "pip<24.1" "wheel<0.45" "packaging==24.2"
 
-
-python3 -m pip install -e .
+# 使用当前环境的 setuptools/packaging，避免 isolation 拉到 75.x
+python3 -m pip install --no-build-isolation -e .
 
 
 
