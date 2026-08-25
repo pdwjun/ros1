@@ -64,7 +64,10 @@ RUN apt -y install ros-noetic-rosbag-snapshot-msgs \
     vim net-tools iputils-ping 
     
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-RUN pip install --no-cache-dir \
+# Python 3.8：必须先升级 pip。系统 pip 20 + packaging 24 会在解析
+# 非 PEP440 版本号（如 0.1dev-r1556）时直接崩溃
+RUN python3 -m pip install --no-cache-dir --upgrade "pip<24.1" "wheel<0.45"
+RUN python3 -m pip install --no-cache-dir \
     pyserial \
     pynvml \
     tornado \
@@ -79,11 +82,11 @@ RUN pip install --no-cache-dir \
     cos-python-sdk-v5==1.9.31 \
     setuptools==74.1.3 \
     importlib-metadata==6.11.0 \
-    prometheus_client==0.21.1 \
     packaging==24.2 \
+    prometheus_client==0.21.1 \
     catkin_pkg==1.0.0 
     
-RUN pip install --no-cache-dir \
+RUN python3 -m pip install --no-cache-dir \
     ipdb==0.13.13 \
     matplotlib==3.7.2 \
     motmetrics==1.4.0 \
