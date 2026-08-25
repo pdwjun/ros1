@@ -9,13 +9,6 @@ env:
 jobs:
   docker_build:
     runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        include:
-          - os: ubuntu-latest
-            arch: amd64
-          - os: ubuntu-22.04-arm
-            arch: arm64
     steps:
       - name: Checkout
         uses: actions/checkout@v4
