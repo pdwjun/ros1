@@ -80,6 +80,7 @@ RUN pip install --no-cache-dir \
     setuptools==74.1.3 \
     importlib-metadata==6.11.0 \
     prometheus_client==0.21.1 \
+    packaging==24.2 \
     catkin_pkg==1.0.0 
     
 RUN pip install --no-cache-dir \
