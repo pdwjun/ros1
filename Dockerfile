@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 arm64v8/ros:noetic
+FROM ros:noetic
 
 ARG user_id=1000
 ENV USERNAME=gt
