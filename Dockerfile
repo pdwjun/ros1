@@ -67,7 +67,7 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 # Python 3.8：必须先升级 pip。系统 pip 20 + packaging 24 会在解析
 # 非 PEP440 版本号（如 0.1dev-r1556）时直接崩溃
 RUN python3 -m pip install --no-cache-dir --upgrade "pip<24.1" "wheel<0.45"
-RUN python3 -m pip install --no-cache-dir \
+RUN python3 -m pip install --no-cache-dir  --ignore-installed\
     pyserial \
     pynvml \
     tornado \
